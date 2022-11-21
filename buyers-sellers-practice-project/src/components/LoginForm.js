@@ -7,6 +7,7 @@ export const LoginForm = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (email && password) {
+      props.loginAttempt({ email, password });
       setEmail("");
       setPassword("");
     } else {
