@@ -1,6 +1,6 @@
 import React from "react";
 import { LoginForm } from "./LoginForm";
-import { loginDatabase } from "..rest/LoginDatabase.js";
+import { loginDatabase } from "../rest/LoginDatabase.js";
 
 export class Login extends React.Component {
   constructor() {
