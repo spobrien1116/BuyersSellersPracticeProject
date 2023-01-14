@@ -1,6 +1,7 @@
 import React from "react";
 import { LoginForm } from "./LoginForm";
 import { loginDatabase } from "../rest/LoginDatabase.js";
+import { loggedInUserDatabase } from "../rest/LoggedInUserDatabase";
 
 export class Login extends React.Component {
   constructor() {
@@ -17,9 +18,15 @@ export class Login extends React.Component {
     const loginInfo = await loginDatabase.get(currentLoginInfo);
     if (loginInfo.email !== "noMatch") {
       this.setState({ loginInfo: currentLoginInfo });
+      this.addUserToLoggedInUserDatabase(loginInfo.email);
     } else {
       console.log("This does not match any users in the system.");
     }
+  };
+
+  addUserToLoggedInUserDatabase = async (email) => {
+    const loggedInUser = await loggedInUserDatabase.put(email);
+    console.log(`The currently logged in user is `, loggedInUser);
   };
 
   render() {

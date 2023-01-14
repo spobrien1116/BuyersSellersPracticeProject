@@ -32,15 +32,18 @@ class LoginDatabase {
         return aUser;
       } else {
         console.log(
-          "Login credentials do not match any user in the database. Login attempt unsuccessful."
+          "Login credentials did not match with this user in the database. Continuing on to next user in the database."
         );
-        const failure = {
-          email: "noMatch",
-          password: "failedLogin",
-        };
-        return failure;
       }
     }
+    console.log(
+      "Login credentials do not match any user in the database. Login attempt unsuccessful."
+    );
+    const failure = {
+      email: "noMatch",
+      password: "failedLogin",
+    };
+    return failure;
   };
 }
 
