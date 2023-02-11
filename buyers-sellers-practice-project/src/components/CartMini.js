@@ -2,7 +2,7 @@ import React from "react";
 import { loggedInUserDatabase } from "../rest/LoggedInUserDatabase.js";
 import { cartDatabase } from "../rest/CartDatabase.js";
 
-export class Cart extends React.Component {
+export class CartMini extends React.Component {
   constructor() {
     super();
     this.state = {

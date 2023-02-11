@@ -30,31 +30,34 @@ export class Shop extends React.Component {
         prices would be calculated through a back-end database for security purposes with a real-life app of
         this nature. */}
         <div className="sale-items">
-          <div className="sale-item">
-            {this.state.saleItems.map((item, index) => (
-              <div key={index}>
-                <div>{item.name}</div>
-                <div>Quantity Available: {item.quantity}</div>
-                <div>Unit Price: ${item.price}</div>
-                <div>
-                  Final Price: ${(item.price * (1 - item.discount)).toFixed(2)}
+          <div className="container text-center">
+            <div className="row row-cols-4">
+              {this.state.saleItems.map((item, index) => (
+                <div className="sale-item col" key={index}>
+                  <div>{item.name}</div>
+                  <div>Quantity Available: {item.quantity}</div>
+                  <div>Unit Price: ${item.price}</div>
+                  <div>
+                    Final Price: $
+                    {(item.price * (1 - item.discount)).toFixed(2)}
+                  </div>
+                  <div>You save {item.discount * 100}%!</div>
                 </div>
-                <div>You save {item.discount * 100}%!</div>
-                <br></br>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
         <div className="shop-items">
-          <div className="shop-item">
-            {this.state.shopItems.map((item, index) => (
-              <div key={index}>
-                <div>{item.name}</div>
-                <div>Quantity Available: {item.quantity}</div>
-                <div>Unit Price: ${item.price}</div>
-                <br></br>
-              </div>
-            ))}
+          <div className="container text-center">
+            <div className="row row-cols-4">
+              {this.state.shopItems.map((item, index) => (
+                <div className="shop-item col" key={index}>
+                  <div>{item.name}</div>
+                  <div>Quantity Available: {item.quantity}</div>
+                  <div>Unit Price: ${item.price}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

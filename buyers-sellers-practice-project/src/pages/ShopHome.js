@@ -1,6 +1,6 @@
 import React from "react";
 import { Shop } from "../components/Shop";
-import { Cart } from "../components/Cart";
+import { CartMini } from "../components/CartMini";
 
 function ShopHome() {
   return (
@@ -12,7 +12,7 @@ function ShopHome() {
           Happy shopping.
         </h4>
       </div>
-      <Cart />
+      <CartMini />
       <Shop />
     </>
   );

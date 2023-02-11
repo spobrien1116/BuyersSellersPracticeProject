@@ -20,26 +20,34 @@ export const LoginForm = (props) => {
   return (
     <div>
       <form className="loginForm" onSubmit={onSubmit}>
-        <label htmlFor="place" className="form-control loginFormLabel">
-          Enter your email.
-        </label>
-        <input
-          type="email"
-          className="form-control loginFormInput"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        ></input>
-        <label htmlFor="place" className="form-control loginFormLabel">
-          Enter your password.
-        </label>
-        <input
-          type="password"
-          className="form-control loginFormInput"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        ></input>
+        <div>
+          <label htmlFor="place" className="form-control loginFormLabel">
+            Enter your email.
+          </label>
+        </div>
+        <div>
+          <input
+            type="email"
+            className="form-control loginFormInput"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          ></input>
+        </div>
+        <div>
+          <label htmlFor="place" className="form-control loginFormLabel">
+            Enter your password.
+          </label>
+        </div>
+        <div>
+          <input
+            type="password"
+            className="form-control loginFormInput"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          ></input>
+        </div>
         <button className="btn btn-primary form-control" type="submit">
           Submit Credentials
         </button>
